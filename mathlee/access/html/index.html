@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mathle</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+
+{% include 'encabezado/encabezado.html' %}
+
+<body>
+    <div class="rpd" id="rpd">
+        <input type="checkbox" id="left">
+        <label id="lft-lbl" for="left" class="left">❮</label>
+        <div class="slide">
+            <div class="cont" id="cont-1">
+                <div class="title">
+                    MathLe
+                </div>
+                <div class="subtitle">
+                    tu solucion para aprender!
+                </div>
+            </div>
+            <div class="cont" id="cont-2">
+                <div class="title">
+                    MathLe 2
+                </div>
+                <div class="subtitle">
+                    tu solucion para aprender! 2
+                </div>
+            </div>
+            <div class="cont" id="cont-3">
+                <div class="title">
+                    MathLe 3
+                </div>
+                <div class="subtitle">
+                    tu solucion para aprender! 3
+                </div>
+            </div>
+            <div class="cont" id="cont-4">
+                <div class="title">
+                    MathLe 4
+                </div>
+                <div class="subtitle">
+                    tu solucion para aprender! 4
+                </div>
+            </div>
+            <div class="cont" id="cont-5">
+                <div class="title">
+                    MathLe 5
+                </div>
+                <div class="subtitle">
+                    tu solucion para aprender! 5
+                </div>
+            </div>
+            <div class="cont" id="cont-6">
+                <div class="title">
+                    MathLe 6
+                </div>
+                <div class="subtitle">
+                    tu solucion para aprender! 6
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="right">
+        <label id="rgt-lbl" for="right" class="right">❯</label>
+    </div>
+    <div class="seccion1" id="QuienesSomos">
+        <img data-aos="fade-right" src="{% static 'img/acerca-de.png' %}">
+        <div data-aos="fade-right" class="text">
+            <h2>¿Quienes somos?</h2>
+            <h3>Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica.</h3>
+        </div>
+    </div>
+    <div class="seccion2" id="NuestroObjetivo">
+        <div data-aos="fade-right" class="text">
+            <h2>¿Cual es nuestro objetivo?</h2>
+            <h3>Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica. Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica.</h3>
+        </div>
+        <img data-aos="fade-right" src="{% static 'img/goals.png' %}">
+    </div>
+    <div class="seccion3" id="Planeacion">
+        <nav class="planeacion" data-aos="fade-right">
+            <div class="lvl-1">
+                <input class="cbTopic" id="cb-lvl1" type="checkbox">
+                <label for="cb-lvl1"><h2>Nivel 1</h2></label>
+                <div class="temas" id="temas-1">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
+            </div>
+            <div class="lvl-2">
+                <input class="cbTopic" id="cb-lvl2" type="checkbox">
+                <label for="cb-lvl2"><h2>Nivel 2</h2></label>
+                <div class="temas" id="temas-2">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
+            </div>
+            <div class="lvl-3">
+                <input class="cbTopic" id="cb-lvl3" type="checkbox">
+                <label for="cb-lvl3"><h2>Nivel 3</h2></label>
+                <div class="temas" id="temas-3">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
+            </div>
+            <div class="lvl-4">
+                <input class="cbTopic" id="cb-lvl4" type="checkbox">
+                <label for="cb-lvl4"><h2>Nivel 4</h2></label>
+                <div class="temas" id="temas-4">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2 class="last">Tema 3</h2>
+                </div>
+            </div>
+        </nav>
+        <div data-aos="fade-right" class="text">
+            <h2>Plan de estudios</h2>
+            <h3>Nuestro plan de estudios se basa en niveles que cubran
+                el nivel de estudio al que se encuentra el usuario sin rodeos
+                y con una mejor explicacion.
+            </h3>
+        </div>
+    </div>
+    <div class="seccion4" id="Registrate">
+        <div class="text" data-aos="fade-right">
+            <h2>Registrate!</h2>
+            <h3>Es tu oportunidad de aprender matematicas de una manera diferente!</h3>
+        </div>
+        <br>
+        <div class="reg_butt" data-aos="fade-right">
+            <img src="static/img/click.png" alt=""><input id="inp" type="email" placeholder="Nombre de usuario"><br>
+            <button onclick=goLogin()>Registrarte</button>
+        </div>
+    </div>
+</body>
+
+<footer>
+    asd
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="static/js/seccion3.js"></script>
+<script src="static/js/carrusel.js"></script>
+<script>
+    function goLogin(){
+        const val = document.getElementById('inp').value;
+        console.log(val);
+        window.location = '/register/' + val;
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>

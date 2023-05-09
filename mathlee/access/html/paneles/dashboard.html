@@ -1,0 +1,96 @@
+<!DOCTYPE django-html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mathle - Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+</head>
+
+{% include 'encabezado/encabezado_dashboard.html' %}
+
+<body id="global">
+    <input id="errorCB" type="checkbox">
+    <div id="error">
+        <label for="errorCB">Tranquilo amigo! termina el nivel <br>
+            anterior para acceder a este.<br><br>
+            Pronto pordras progresar ;)
+        </label>
+    </div>
+    <div id="dsh_cont" style="height: {{ dsh_height }}vh;">
+        <div id="dsh_lft_bar">
+            <nav>
+                <div class="menuButtons" id="first_cont">
+                    <input class="cbInput" id="cb-1" type="checkbox">
+                    <label for="cb-1"><h2>Perfil</h2></label>
+                    <div class="menuExtendible">
+                        <h2>Editar perfil</h2>
+                        <h2>Privacidad</h2>
+                        <h2>Ayuda</h2>
+                    </div>
+                </div>
+                <div class="menuButtons">
+                    <input class="cbInput" id="cb-2" type="checkbox">
+                    <label for="cb-2"><h2>Logros</h2></label>
+                    <div class="menuExtendible">
+                        <h2>Por niveles</h2>
+                        <h2>Por temas</h2>
+                        <h2>Todos</h2>
+                    </div>
+                </div>
+                <div class="menuButtons">
+                    <input class="cbInput" id="cb-3" type="checkbox">
+                    <label for="cb-3"><h2>Estadisticas</h2></label>
+                    <div class="menuExtendible">
+                        <h2>Por niveles</h2>
+                        <h2>Por temas</h2>
+                        <h2>Todas</h2>
+                    </div>
+                </div>
+                <div class="menuButtons" onclick="window.location = '/logout'">
+                    <label><h2>Cerrar sesion</h2></label>
+                </div>
+            </nav>
+        </div>
+        <div class="contenedores">
+            {% for k, v in list.items %}
+            <div class="lvl" id="lvl{{forloop.counter}}" style="height: {{cont_height}}%;">
+                <div id="bloqueado"><img src="{% static 'img/locked.png' %}"></div>
+                <div id="top">
+                    <h2 class="titulo" retype="nivel" onclick="redirect('{{rd}}' + '{{ forloop.counter }}')">{{v.text}}</h2>
+                    <div class="progreso">
+                        <h2>Completado: </h2>
+                        <div class="bdcF" id="bdcF1">
+                            <div class="bdcE" id="bdcE1"></div>
+                        </div> 
+                    </div> 
+                </div>
+                <div id="bottom">
+                    <h2 id="titulo">Actividades: </h2>
+                    {% for t in v.bott %}
+                        <h2 class="tituloActividad">{{t}}</h2>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> 
+</body>
+
+<script src="{% static 'js/dashboard/left_bar.js' %}"></script>
+
+<script>
+    
+    function redirect(n){
+            window.location = '/dashboard/' + n;
+    }
+
+</script>
